@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>HTML5 Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesVolare.css">
+    <script defer src="scriptsVolare.js"></script>
+</head>
+
+<body>
+    <h1>Ejercicio Kata: Il sogno di volare </h1>
+    <section>
+        <button onclick="painter.paintSingleImage(helicopters.getRandomCivil())">Pinta un helicóptero civil aleatorio</button>
+        <button onclick="painter.paintSingleImage(helicopters.getRandomMilitary())">Pinta un helicóptero militar aleatorio</button>
+        <button onclick="painter.paintMultipleImages(helicopters.getAll())">Pinta muchos helicópteros</button>
+        <button onclick="painter.paintSingleImage(aircrafts.getRandomCivil())">Pinta un avión civil aleatorio</button>
+        <button onclick="painter.paintSingleImage(aircrafts.getRandomMilitary())">Pinta un avión militar aleatorio</button>
+        <button onclick="painter.paintMultipleImages(aircrafts.getAll())">Pinta muchos aviones</button>
+    </section>
+</body>
+
+</html>
