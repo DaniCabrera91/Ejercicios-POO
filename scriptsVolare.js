@@ -33,52 +33,50 @@ const militaryHelicopter = [
 class Gallery {
     constructor(civilImages, militaryImages) {
         this.civilImages = civilImages
-        this.militaryImages = militaryImages
+        this.militaryImages = militaryImages 
     }
+    
     
     getRandomCivil() {
         return this.civilImages[Math.floor(Math.random() * this.civilImages.length)]
     }
-    
+   
     getRandomMilitary() {
         return this.militaryImages[Math.floor(Math.random() * this.militaryImages.length)] 
 
     }
     
     getAll() {
-        return this.civilImages.concat(this.militaryImages)
+        return [...this.civilImages , ...this.militaryImages]
     }
 }
 
-
 class Painter {
     constructor() {
-        this.gallery = document.createElement("section");
-        this.createGallery()
+        this.gallery = this.createGallery()
     }
 
     createGallery() {
-        document.querySelector("body").appendChild(this.galery)
+        const section = document.createElement('section')
+        document.querySelector("body").appendChild(section)
+        return section
     }
 
-    createImageTag = (imageUrl) =>{ 
-    return `<picture>
-    <img src="${imageUrl}"/>
-    </picture>`   
+    createImageTag (imageUrl){
+        const picture = document.createElement("picture");
+        const img = document.createElement("img")
+        img.src = imageUrl;
+        picture.appendChild(img);
+        return picture
     }
 
     paintSingleImage = (imageUrl) => {
-        this.createGallery.innerHTML = this.gallery(imageUrl)
-    }
-
-    paintSingleImage = (imageUrl) => {
-        this.gallery.innerHTML = this.createImageTag(imageUrl)
+        const imageTag = this.createImageTag(imageUrl)
+        this.gallery.appendChild(imageTag)
     }
 
     paintMultipleImages(allImages) {
-        for (let i = 0; i < allImages.length; i++) {
-            this.createImageTag(allImages[i])
-        }
+       allImages.forEach(url => this.paintSingleImage(url))
     }
 }
 

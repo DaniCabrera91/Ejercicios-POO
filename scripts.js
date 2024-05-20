@@ -11,7 +11,7 @@ class Person {
     }
     obtDetails = () => {
         console.log(`Datos personales: ${this.name}, ${this.age}, ${this.genre}`)
-        }
+    }
         
 }    
 const newPerson = new Person('Laura', 23, 'Female')
